@@ -1,0 +1,54 @@
+.main-layout {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background: #0d1117;
+}
+
+.sidebar-left {
+  width: 25%;
+  min-width: 200px;
+  max-width: 350px;
+  background: #161b22;
+  border-right: 1px solid #30363d;
+  overflow-y: auto;
+}
+
+.sidebar-info {
+  width: 25%;
+  min-width: 200px;
+  max-width: 350px;
+  background: #0d1117;
+  border-right: 1px solid #30363d;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.canvas-area {
+  flex: 1;
+  background: #010409;
+  position: relative;
+  overflow: hidden;
+}
+
+/* 滚动条样式 */
+.sidebar-left::-webkit-scrollbar,
+.sidebar-info::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar-left::-webkit-scrollbar-track,
+.sidebar-info::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+.sidebar-left::-webkit-scrollbar-thumb,
+.sidebar-info::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+
+.sidebar-left::-webkit-scrollbar-thumb:hover,
+.sidebar-info::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}

@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create:*)",
+      "Read(//tmp/**)",
+      "Bash(rm -rf vite-fractal)",
+      "Bash(cp:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "Bash(curl:*)",
+      "Bash(git init:*)",
+      "Bash(git branch:*)",
+      "Bash(cat:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

@@ -1,0 +1,141 @@
+.shape-info {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-content {
+  padding: 40px 60px;
+  flex: 1;
+  overflow-y: auto;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.info-description {
+  color: #8b949e;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+/* 标题样式 */
+.info-h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #f0f6fc;
+  margin: 0 0 24px 0;
+  line-height: 1.3;
+  border-bottom: 1px solid #30363d;
+  padding-bottom: 16px;
+}
+
+.info-h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #f0f6fc;
+  margin: 32px 0 16px 0;
+  line-height: 1.4;
+}
+
+.info-h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #f0f6fc;
+  margin: 24px 0 12px 0;
+  line-height: 1.4;
+}
+
+/* 段落样式 */
+.info-paragraph {
+  margin: 0 0 16px 0;
+  line-height: 1.8;
+}
+
+/* 列表样式 */
+.info-list {
+  margin: 12px 0 20px 24px;
+  padding: 0;
+}
+
+.info-list li {
+  margin-bottom: 8px;
+  line-height: 1.7;
+}
+
+.info-list ol {
+  list-style-type: decimal;
+}
+
+.info-list ul {
+  list-style-type: disc;
+}
+
+/* 代码样式 */
+.info-code {
+  background: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  padding: 12px 16px;
+  margin: 16px 0;
+  overflow-x: auto;
+}
+
+.info-code code {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 14px;
+  color: #79c0ff;
+  line-height: 1.5;
+}
+
+/* 行内粗体 */
+.info-description strong {
+  color: #f0f6fc;
+  font-weight: 600;
+}
+
+/* 空状态 */
+.info-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.empty-message {
+  text-align: center;
+  color: #484f58;
+}
+
+.empty-icon {
+  font-size: 48px;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.empty-message p {
+  margin: 8px 0;
+}
+
+.empty-message .empty-hint {
+  font-size: 14px;
+  color: #30363d;
+}
+
+/* 滚动条样式 */
+.info-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.info-content::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+.info-content::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+
+.info-content::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}

@@ -1,0 +1,88 @@
+.main-layout-tabs {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  background: #0d1117;
+}
+
+.sidebar-left {
+  width: 280px;
+  min-width: 250px;
+  max-width: 400px;
+  background: #161b22;
+  border-right: 1px solid #30363d;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background: #010409;
+  overflow: hidden;
+}
+
+.tab-header {
+  display: flex;
+  background: #161b22;
+  border-bottom: 1px solid #30363d;
+  padding: 0 16px;
+  flex-shrink: 0;
+}
+
+.tab-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 20px;
+  background: transparent;
+  border: none;
+  color: #8b949e;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  border-bottom: 2px solid transparent;
+  position: relative;
+  top: 1px;
+}
+
+.tab-button:hover {
+  color: #c9d1d9;
+  background: rgba(137, 145, 155, 0.1);
+}
+
+.tab-button.active {
+  color: #58a6ff;
+  background: rgba(56, 139, 253, 0.1);
+  border-bottom-color: #58a6ff;
+}
+
+.tab-icon {
+  font-size: 16px;
+}
+
+.tab-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* 滚动条样式 */
+.sidebar-left::-webkit-scrollbar {
+  width: 8px;
+}
+
+.sidebar-left::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+.sidebar-left::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 4px;
+}
+
+.sidebar-left::-webkit-scrollbar-thumb:hover {
+  background: #484f58;
+}
