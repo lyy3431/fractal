@@ -727,6 +727,153 @@ H 树是一种分形树结构，因其形状由重复的 H 形图案组成而得
             lineColor: '#00ff88',
             bgColor: '#010409'
           }
+        },
+        {
+          id: 'barnsley-fern',
+          name: 'Barnsley Fern',
+          description: `## Barnsley Fern - 巴恩斯利蕨类植物
+
+### 历史背景
+
+Barnsley Fern 由英国数学家 **Michael Barnsley** 在 1988 年提出，是他著作"Fractals Everywhere"中的经典例子。Barnsley 使用这个图形来展示迭代函数系统（IFS）的强大能力。
+
+### 数学定义
+
+Barnsley Fern 使用**迭代函数系统 (Iterated Function System, IFS)** 生成。通过四个仿射变换，按不同概率选择应用：
+
+1. **f₁(x,y) = (0, 0.16y)** - 概率 1%，生成茎
+2. **f₂(x,y) = (0.85x+0.04y, -0.04x+0.85y+1.6)** - 概率 85%，生成主叶
+3. **f₃(x,y) = (0.2x-0.26y, 0.23x+0.22y+1.6)** - 概率 7%，生成左下叶
+4. **f₄(x,y) = (-0.15x+0.28y, 0.26x+0.24y+0.44)** - 概率 7%，生成右下叶
+
+### 视觉特征
+
+生成的图形像一片蕨类植物的叶子，具有：
+- 中央的茎
+- 两侧对称的小叶
+- 自相似性：每片小叶都像整片大叶子的缩小版
+
+### 与自然的关系
+
+Barnsley Fern 展示了数学如何模拟自然：
+- 蕨类植物是自然界中常见的分形
+- 简单的数学规则可以生成复杂的自然形态
+- 这启发了计算机图形学中的分形植物生成
+
+### 探索提示
+
+- 增加迭代次数可以看到更密集的叶子
+- 改变颜色可以创造不同视觉效果
+- 每个点都是独立计算的，展示了混沌系统的特性`,
+          parameters: {
+            iterations: 50000,
+            pointColor: '#00ff00',
+            bgColor: '#010409'
+          }
+        },
+        {
+          id: 'butterfly-curve',
+          name: 'Butterfly Curve',
+          description: `## Butterfly Curve - 蝴蝶曲线
+
+### 历史背景
+
+蝴蝶曲线由美国数学家 **Temple H. Fay** 在 1989 年发现。他在研究极坐标方程时偶然发现了这个美丽的图形，因其形状像一只展开翅膀的蝴蝶而得名。
+
+### 数学定义
+
+蝴蝶曲线使用极坐标方程定义：
+
+**r = e^(sin θ) - 2cos(4θ) + sin⁵((2θ-π)/24)**
+
+这个方程结合了：
+- 指数函数：e^(sin θ)
+- 余弦函数：-2cos(4θ)
+- 五次正弦函数：sin⁵((2θ-π)/24)
+
+### 视觉特征
+
+- 形状像一只展开翅膀的蝴蝶
+- 左右对称
+- 翅膀上有复杂的纹路和环路
+- 颜色渐变可以增强视觉效果
+
+### 数学之美
+
+蝴蝶曲线展示了数学的优雅：
+- 一个简单的方程生成复杂的图形
+- 三角函数的组合创造自然美感
+- 体现了数学与艺术的统一
+
+### 探索提示
+
+- 增加圈数可以看到更多细节
+- 改变颜色创造不同风格
+- 尝试填充效果`,
+          parameters: {
+            loops: 5,
+            lineColor: '#ff00ff',
+            bgColor: '#010409',
+            filled: 'false'
+          }
+        },
+        {
+          id: 'lorenz-attractor',
+          name: 'Lorenz Attractor',
+          description: `## Lorenz Attractor - 洛伦兹吸引子
+
+### 历史背景
+
+洛伦兹吸引子由美国气象学家 **Edward Lorenz** 在 1963 年发现。他在研究天气预报模型时偶然发现了这个混沌系统，这个发现开创了混沌理论领域，并引出了著名的"蝴蝶效应"概念。
+
+### 数学定义
+
+洛伦兹吸引子由三个微分方程定义：
+
+**dx/dt = σ(y - x)**
+**dy/dt = x(ρ - z) - y**
+**dz/dt = xy - βz**
+
+其中：
+- σ (sigma) = 普朗特数，通常取 10
+- ρ (rho) = 瑞利数，通常取 28
+- β (beta) = 几何参数，通常取 8/3
+
+### 视觉特征
+
+- 形状像一对蝴蝶翅膀
+- 轨迹在两个"翅膀"之间来回切换
+- 永不重复，永不交叉
+- 展示了对初始条件的敏感依赖性
+
+### 混沌理论
+
+洛伦兹吸引子是混沌理论的标志：
+- **确定性混沌**：系统是完全确定的，但行为不可预测
+- **蝴蝶效应**：初始条件的微小变化会导致结果的巨大差异
+- **奇异吸引子**：轨迹被吸引到某个区域，但永不重复
+
+### 实际应用
+
+- **气象学**：解释为什么长期天气预报不可行
+- **物理学**：研究湍流和对流
+- **工程学**：激光和电路系统分析
+- **生物学**：种群动态模型
+
+### 探索提示
+
+- 调节 σ、ρ、β 参数观察不同行为
+- 某些参数值下系统会进入周期轨道
+- 经典参数 (10, 28, 8/3) 产生最美丽的混沌 attractor`,
+          parameters: {
+            sigma: 10,
+            rho: 28,
+            beta: 2.6666666666666665,
+            steps: 10000,
+            dt: 0.01,
+            lineColor: '#ff6600',
+            bgColor: '#010409'
+          }
         }
       ]
     }
@@ -803,6 +950,26 @@ export const parameterConfigs: Record<string, ParameterConfig[]> = {
     { name: '频率 a', key: 'a', type: 'number', min: 1, max: 10, step: 1 },
     { name: '频率 b', key: 'b', type: 'number', min: 1, max: 10, step: 1 },
     { name: '相位差', key: 'phase', type: 'number', min: 0, max: 6.28, step: 0.01 },
+    { name: '线条颜色', key: 'lineColor', type: 'color' },
+    { name: '背景颜色', key: 'bgColor', type: 'color' }
+  ],
+  'barnsley-fern': [
+    { name: '迭代次数', key: 'iterations', type: 'number', min: 10000, max: 100000, step: 10000 },
+    { name: '点的颜色', key: 'pointColor', type: 'color' },
+    { name: '背景颜色', key: 'bgColor', type: 'color' }
+  ],
+  'butterfly-curve': [
+    { name: '圈数', key: 'loops', type: 'number', min: 1, max: 20, step: 1 },
+    { name: '线条颜色', key: 'lineColor', type: 'color' },
+    { name: '背景颜色', key: 'bgColor', type: 'color' },
+    { name: '填充', key: 'filled', type: 'select', options: ['true', 'false'] }
+  ],
+  'lorenz-attractor': [
+    { name: 'σ (Sigma)', key: 'sigma', type: 'number', min: 1, max: 20, step: 0.1 },
+    { name: 'ρ (Rho)', key: 'rho', type: 'number', min: 1, max: 50, step: 0.1 },
+    { name: 'β (Beta)', key: 'beta', type: 'number', min: 1, max: 5, step: 0.1 },
+    { name: '步数', key: 'steps', type: 'number', min: 1000, max: 50000, step: 1000 },
+    { name: '步长 dt', key: 'dt', type: 'number', min: 0.001, max: 0.02, step: 0.001 },
     { name: '线条颜色', key: 'lineColor', type: 'color' },
     { name: '背景颜色', key: 'bgColor', type: 'color' }
   ],

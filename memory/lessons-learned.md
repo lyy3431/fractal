@@ -180,6 +180,72 @@ const initialRadius = maxRadius / Math.exp(b * totalAngle);
 
 ---
 
+## 8. 参数改变后图形不更新问题
+
+### 问题现象
+用户修改背景颜色、线条颜色等参数后，图形显示没有发生变化。
+
+### 根本原因
+1. `handleParameterChange` 更新了 `parameters` state
+2. 但 `useEffect` 的依赖项是 `[shape, render]`，只有 `shape` 改变时才触发渲染
+3. 参数改变后没有触发重新渲染
+
+### 解决方案
+修改 `FractalCanvas.tsx`：
+1. 将第一个 `useEffect` 的依赖项从 `[shape, render]` 改为 `[shape]`
+2. 添加新的 `useEffect` 监听 `parameters` 变化：
+```typescript
+// shape 改变时重置参数并渲染
+useEffect(() => {
+  if (shape?.parameters) {
+    setParameters(shape.parameters);
+    render(shape.parameters);
+  } else {
+    render();
+  }
+}, [shape]);
+
+// 参数改变时触发渲染
+useEffect(() => {
+  if (shape) {
+    render();
+  }
+}, [parameters, shape]);
+```
+
+### 核心原则
+**当用户可修改参数时，必须监听参数变化并触发重新渲染。**
+
+---
+
+## 9. 新增图形实现清单
+
+### 已实现的新图形
+
+1. **Barnsley Fern** - 巴恩斯利蕨类植物
+   - 使用迭代函数系统 (IFS) 生成
+   - 四个仿射变换按概率选择应用
+   - 参数：迭代次数、点颜色、背景颜色
+
+2. **Lorenz Attractor** - 洛伦兹吸引子
+   - 混沌理论的标志性图形
+   - 使用 RK4 方法积分三个微分方程
+   - 参数：σ、ρ、β、步数、步长、颜色
+
+3. **Butterfly Curve** - 蝴蝶曲线
+   - 极坐标方程生成的美丽曲线
+   - 形似展开翅膀的蝴蝶
+   - 参数：圈数、颜色、填充
+
+### 实现步骤
+1. 在 `src/components/Canvas/renderers/` 创建新的渲染器文件
+2. 在 `src/components/Canvas/renderers/index.ts` 导出新渲染器
+3. 在 `FractalCanvas.tsx` 中导入并添加 switch case
+4. 在 `shapes.ts` 添加图形数据和参数配置
+5. 将新图形 ID 添加到 `NO_ZOOM_PAN_IDS` 数组
+
+---
+
 ## 通用设计原则
 
 ### 1. 参数验证原则

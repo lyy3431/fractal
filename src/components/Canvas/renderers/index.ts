@@ -9,12 +9,15 @@ export { renderSierpinskiCarpet } from './sierpinskiCarpet';
 export { renderKochSnowflake } from './kochSnowflake';
 export { renderCantorSet } from './cantorSet';
 export { renderApollonian } from './apollonian';
+export { renderBarnsleyFern } from './barnsleyFern';
 
 // 曲线图形渲染器
 export { renderHilbertCurve } from './hilbertCurve';
 export { renderDragonCurve } from './dragonCurve';
 export { renderGoldenSpiral } from './goldenSpiral';
 export { renderLissajous } from './lissajous';
+export { renderButterflyCurve } from './butterflyCurve';
 
 // 几何图形渲染器
 export { renderHTree } from './hTree';
+export { renderLorenzAttractor } from './lorenzAttractor';

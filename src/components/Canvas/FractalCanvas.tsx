@@ -11,11 +11,14 @@ import {
   renderKochSnowflake,
   renderCantorSet,
   renderApollonian,
+  renderBarnsleyFern,
   renderHilbertCurve,
   renderDragonCurve,
   renderGoldenSpiral,
   renderLissajous,
-  renderHTree
+  renderHTree,
+  renderButterflyCurve,
+  renderLorenzAttractor
 } from './renderers';
 import { parameterConfigs } from '../../data/shapes';
 import './FractalCanvas.css';
@@ -31,11 +34,14 @@ const NO_ZOOM_PAN_IDS = [
   'koch-snowflake',
   'cantor-set',
   'apollonian',
+  'barnsley-fern',
   'hilbert-curve',
   'dragon-curve',
   'golden-spiral',
   'h-tree',
-  'lissajous'
+  'lissajous',
+  'butterfly-curve',
+  'lorenz-attractor'
 ];
 
 export function FractalCanvas({ shape }: FractalCanvasProps) {
@@ -138,6 +144,9 @@ export function FractalCanvas({ shape }: FractalCanvasProps) {
       case 'apollonian':
         renderApollonian(canvas, width, height, renderParameters, canvasState);
         break;
+      case 'barnsley-fern':
+        renderBarnsleyFern(canvas, width, height, renderParameters, canvasState);
+        break;
       case 'hilbert-curve':
         renderHilbertCurve(canvas, width, height, renderParameters, canvasState);
         break;
@@ -152,6 +161,12 @@ export function FractalCanvas({ shape }: FractalCanvasProps) {
         break;
       case 'h-tree':
         renderHTree(canvas, width, height, renderParameters, canvasState);
+        break;
+      case 'butterfly-curve':
+        renderButterflyCurve(canvas, width, height, renderParameters, canvasState);
+        break;
+      case 'lorenz-attractor':
+        renderLorenzAttractor(canvas, width, height, renderParameters, canvasState);
         break;
     }
   }, [shape, parameters, canvasState]);
