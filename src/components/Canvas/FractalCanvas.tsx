@@ -159,12 +159,20 @@ export function FractalCanvas({ shape }: FractalCanvasProps) {
   // 渲染触发 - 当 shape 改变时，立即使用 shape.parameters 渲染
   useEffect(() => {
     if (shape?.parameters) {
-      // shape 改变时立即使用新参数渲染，避免等待 state 更新
+      // shape 改变时立即使用新参数渲染，同时重置用户参数
+      setParameters(shape.parameters);
       render(shape.parameters);
     } else {
       render();
     }
-  }, [shape, render]);
+  }, [shape]);
+
+  // 参数改变时触发渲染（用于用户手动调整参数）
+  useEffect(() => {
+    if (shape) {
+      render();
+    }
+  }, [parameters, shape]);
 
   // 窗口大小变化
   useEffect(() => {

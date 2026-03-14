@@ -11,7 +11,14 @@
       "Bash(git init:*)",
       "Bash(git branch:*)",
       "Bash(cat:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git config:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote:*)",
+      "Bash(http_proxy=http://localhost:7897 https_proxy=http://localhost:7897 git push -u origin main 2>&1)",
+      "Bash(gh repo:*)",
+      "Bash(http_proxy=http://localhost:7897 https_proxy=http://localhost:7897 gh repo create ly y3431/fractal --public --source=. --push 2>&1)",
+      "Bash(export:*)"
     ]
   }
 }
